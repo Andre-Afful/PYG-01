@@ -14,6 +14,21 @@ DESIGN PROCESS
   c. For the purpose of simplyifing this task, accuracy and possibly integrity for audit purposes, Nana requires a program that can cary out this task correctly and efficiently.
   
 2.The second step was to collect information. In this step, the PYG-01 team had to find out exactly what information was going to be input in the time tracking program, and the expected output. In this case the information that the program required was the date of the task, the time the task was initiated and closed, the number of hours, and finally the amount of money earned calculated from the number of hours worked. 
+
+steps:
+1.	We imported some libraries which include CSV, DateTime, pandas and os
+2.	We created a csv file to save our data
+3.	We converted the columns in the CSV files to dataframe
+4.	We use getDateTime to get the date and time in real time
+5.	We combined the date and time using combineDateTime
+6.	We use addToCSV to add the data into the CSV file
+7.	We create an input that tells your client "Enter the Client_ID: "
+8.	Nana will enter the client ID and he receives a prompt that reads “enter start time”
+9.	Nana will enter the start time and he receives a prompt that reads “enter stop time”
+10.	After Nana enters the stop time, At the backend, we calculate the amount of time elapsed in hours by subtracting the end time from the start time
+11.	 We then multiply the amount of time elapsed by 5 to get the total amount spant in dollars 
+12.	We then add the following column to the CSV getDateTime()[0], Client_ID, time_started, time_ended, no_of_hours, money_earned)
+
   
 
 

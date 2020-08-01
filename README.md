@@ -35,6 +35,18 @@ steps:
 11.	It then multiply the amount of time elapsed by 5 to get the total amount spant in dollars 
 12.	The following columns were added to the CSV: getDateTime()[0], Client_ID, time_started, time_ended, no_of_hours, money_earned)
 
+PROGRAM DEPENDENCIES
+1. The datetime library was used to provide a class for updating and dealing with dates and time
+
+2. We imported the os module to provide functions which helped us in formatting and editing a directory. Some of these include, removing a folder's contents and also identifying a current directory.
+
+3. Again, we imported csv files to enable us sore large number of variables and data.
+
+4.Some advantages of pandas include, it contains multiple methods for convenient data filtering. The major reason for our importation of pandas was because of its variety of utilities which can perform basic input and outout operations in a seamless manner.
+
+5. Finally, Github served as a graphical interface for us to share our framework with others and also submit our assignment.
+
+
   
 
 

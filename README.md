@@ -15,19 +15,33 @@ DESIGN PROCESS
   
 2.The second step was to collect information. In this step, the PYG-01 team had to find out exactly what information was going to be input in the time tracking program, and the expected output. In this case the information that the program required was the date of the task, the time the task was initiated and closed, the number of hours, and finally the amount of money earned calculated from the number of hours worked. 
 
-steps:
-1.	We imported some libraries which include CSV, DateTime, pandas and os
+STEPS
+1.	We imported some libraries which included CSV, DateTime, pandas and os
 2.	We created a csv file to save our data
 3.	We converted the columns in the CSV files to dataframe
-4.	We use getDateTime to get the date and time in real time
+4.	We used getDateTime to get the date and time in real time
 5.	We combined the date and time using combineDateTime
-6.	We use addToCSV to add the data into the CSV file
-7.	We create an input that tells your client "Enter the Client_ID: "
-8.	Nana will enter the client ID and he receives a prompt that reads “enter start time”
-9.	Nana will enter the start time and he receives a prompt that reads “enter stop time”
-10.	After Nana enters the stop time, At the backend, we calculate the amount of time elapsed in hours by subtracting the end time from the start time
-11.	 We then multiply the amount of time elapsed by 5 to get the total amount spant in dollars 
-12.	We then add the following column to the CSV getDateTime()[0], Client_ID, time_started, time_ended, no_of_hours, money_earned)
+6.	We used addToCSV to add the data into the CSV file
+7.	We created an input that allowed our client to "Enter the Client_ID: "
+8.	Nana would enter the client ID and he receives a prompt that reads “enter start time”
+9.	Nana then enters the start time and receives a prompt that reads “enter stop time”
+10.	After Nana enters the stop time, from the backend, we calculate the amount of time elapsed in hours by subtracting the end time from the start time
+11.	We then multiply the amount of time elapsed by 5 to get the total amount spent in dollars 
+12.	Lastly, we added the following column to the CSV getDateTime()[0], Client_ID, time_started, time_ended, no_of_hours, money_earned)
+
+PROGRAM DEPENDENCIES
+1. The datetime library was used to provide a class for updating and dealing with dates and time
+
+2. We imported the os module to provide functions which helped us in formatting and editing a directory. Some of these include, removing a folder's contents and also identifying a current directory.
+
+3. Again, we imported csv files to enable us store large number of variables and data.
+
+4.Some advantages of pandas include, it containing multiple methods for convenient data filtering. The major reason for our importation of pandas was because of its variety of utilities which could perform basic input and output operations in a seamless manner.
+
+5. Finally, Github served as a graphical interface for us to share our framework with others and also submit our assignment.
+
+
+
 
   
 

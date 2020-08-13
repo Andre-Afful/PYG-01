@@ -1,0 +1,85 @@
+# import libraries
+from datetime import datetime
+import os
+import csv
+import pandas as pd
+
+# create file.csv
+def createCSV():
+    # check if Nana_Time_Tracker.csv exists already
+    if os.path.exists('./Nana_Time_Tracker.csv'):
+        return
+    # creates Nana_Time_Tracker.csv with columns sonl
+    else:
+        columns = pd.DataFrame(columns=['Date', 'Client_ID' , 'Time_Started', 'Time_Ended', 
+                              'No_of_Hours', 'Money_Earned'])
+        # save file.csv
+        columns.to_csv('./Nana_Time_Tracker.csv')
+        return
+
+# get the date and time from the system
+def getDateTime():
+        date_time = datetime.now()
+        date = date_time.date()
+        time = date_time.time()
+        return date, time
+
+# combine the date and time 
+def combineDateTime(date, time):
+    date_time = datetime.combine(date, time)
+    return date_time
+
+
+# add parameters to Nana_Time_Tracker.csv
+def addToCSV(date, Client_ID, time_started, time_ended, no_of_hours, money_earned):
+    my_csv_list = ['',date, Client_ID, time_started, time_ended, no_of_hours, money_earned]
+    my_csv_file = open('./Nana_Time_Tracker.csv', 'a')
+    writer = csv.writer(my_csv_file, delimiter=',')
+    writer.writerow(my_csv_list)
+    my_csv_file.flush()
+    my_csv_file.close()
+    return 1
+    
+
+createCSV()
+Client_ID = input("Enter the Client_ID: ")
+
+print('\n Welcome')
+    #user will have to enter start time
+print('Start Time')
+print('Time should be in 24hr format = HH:MM')
+    
+time_started = input("Enter the time started... \n")
+start_date = getDateTime()[0]
+time_started = datetime.strptime(time_started, '%H:%M').time()
+start_datetime = combineDateTime(start_date, time_started)
+    
+timeStart = datetime.timestamp(start_datetime)
+    
+    
+print('\n Welcome')
+    # user will have to enter end time
+print('Time Ended')
+print('Time should be in 24hr format = HH:MM')
+        
+time_ended = input("Enter the end time in 24hr format (HH:MM): \n")
+end_date = getDateTime()[0]
+time_ended = datetime.strptime(time_ended, '%H:%M').time()
+end_datetime = combineDateTime(end_date, time_ended)
+        
+timeEnd = datetime.timestamp(end_datetime)
+        
+    #calculate the amount of time elapsed in hours
+seconds = timeEnd - timeStart
+no_of_hours = seconds/3600
+no_of_hours = round(no_of_hours, 3)
+        
+    #Nana makes $5 an hour
+money_earned = no_of_hours * 5
+money_earned = round(money_earned, 3)
+        
+addToCSV(getDateTime()[0], Client_ID, time_started, time_ended, no_of_hours, money_earned)
+        
+print(f'\n Hello Nana, you have spent {no_of_hours}hours!')
+print(f'Great job! For working {no_of_hours}hours, you have earned ${money_earned}')
+    
